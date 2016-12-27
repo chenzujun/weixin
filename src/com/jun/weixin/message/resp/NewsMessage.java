@@ -2,10 +2,13 @@ package com.jun.weixin.message.resp;
 
 import java.util.List;
 
+import com.jun.weixin.message.base.Article;
+import com.jun.weixin.message.base.BaseMessage;
+
 public class NewsMessage extends BaseMessage {
-    // 图文消息个数，限制为10条以内
+    // 图文消息个数，限制为8条以内
     private int ArticleCount;
-    // 多条图文消息信息，默认第一个item为大图
+    // 多条图文消息信息，默认第一个item为大图,注意，如果图文数超过10，则将会无响应
     private List<Article> Articles;
 
     public int getArticleCount() {

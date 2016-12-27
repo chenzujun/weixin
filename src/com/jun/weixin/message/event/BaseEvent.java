@@ -17,7 +17,7 @@ public class BaseEvent {
     private long CreateTime;
     // 消息类型
     private String MsgType;
-    // 事件类型
+    // 事件类型，subscribe(订阅)、unsubscribe(取消订阅)
     private String Event;
 
     public String getToUserName() {
