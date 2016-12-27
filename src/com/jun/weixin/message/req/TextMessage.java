@@ -1,5 +1,7 @@
 package com.jun.weixin.message.req;
 
+import com.jun.weixin.message.base.BaseMessage;
+
 public class TextMessage extends BaseMessage {
     // 消息内容
     private String Content;

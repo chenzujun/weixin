@@ -12,7 +12,7 @@ import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.jun.weixin.message.resp.Article;
+import com.jun.weixin.message.base.Article;
 import com.jun.weixin.message.resp.ImageMessage;
 import com.jun.weixin.message.resp.MusicMessage;
 import com.jun.weixin.message.resp.NewsMessage;
@@ -54,12 +54,14 @@ public class MessageUtil {
     // 事件类型：unsubscribe(取消订阅)
     public static final String EVENT_TYPE_UNSUBSCRIBE = "unsubscribe";
     // 事件类型：scan(用户已关注时的扫描带参数二维码)
-    public static final String EVENT_TYPE_SCAN = "scan";
+    public static final String EVENT_TYPE_SCAN = "SCAN";
     // 事件类型：LOCATION(上报地理位置)
     public static final String EVENT_TYPE_LOCATION = "LOCATION";
     // 事件类型：CLICK(自定义菜单)
     public static final String EVENT_TYPE_CLICK = "CLICK";
-
+    // 事件类型：VIEW(点击菜单跳转链接时的事件推送)
+    public static final String EVENT_TYPE_VIEW = "VIEW";
+    
     // 响应消息类型：文本
     public static final String RESP_MESSAGE_TYPE_TEXT = "text";
     // 响应消息类型：图片
@@ -72,6 +74,9 @@ public class MessageUtil {
     public static final String RESP_MESSAGE_TYPE_MUSIC = "music";
     // 响应消息类型：图文
     public static final String RESP_MESSAGE_TYPE_NEWS = "news";
+    
+    // 客服接口
+    public static final String RESP_MESSAGE_TYPE_KF = "transfer_customer_service";
 
     /**
      * 解析微信发来的请求（XML）

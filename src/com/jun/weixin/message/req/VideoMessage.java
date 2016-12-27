@@ -1,23 +1,22 @@
-package com.jun.weixin.message.resp;
+package com.jun.weixin.message.req;
 
-public class Video {
-    // 媒体文件id
+import com.jun.weixin.message.base.BaseMessage;
+
+public class VideoMessage extends BaseMessage {
+    // 媒体ID
     private String MediaId;
-    // 缩略图的媒体id
+    // 语音格式
     private String ThumbMediaId;
 
     public String getMediaId() {
         return MediaId;
     }
-
     public void setMediaId(String mediaId) {
         MediaId = mediaId;
     }
-
     public String getThumbMediaId() {
         return ThumbMediaId;
     }
-
     public void setThumbMediaId(String thumbMediaId) {
         ThumbMediaId = thumbMediaId;
     }

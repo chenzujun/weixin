@@ -30,13 +30,6 @@ public class CoreService {
 	    // 消息类型
 	    String msgType = requestMap.get("MsgType");
 
-	    // 回复文本消息
-	    TextMessage textMessage = new TextMessage();
-	    textMessage.setToUserName(fromUserName);
-	    textMessage.setFromUserName(toUserName);
-	    textMessage.setCreateTime(new Date().getTime());
-	    textMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
-
 	    // 文本消息
 	    if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
 		respContent = "您发送的是文本消息！";
@@ -90,8 +83,14 @@ public class CoreService {
 		    // TODO 处理菜单点击事件
 		}
 	    }
-	    // 设置文本消息的内容
-	    textMessage.setContent(respContent);
+
+	    // 回复消息
+	    TextMessage textMessage = new TextMessage();
+	    textMessage.setToUserName(fromUserName);
+	    textMessage.setFromUserName(toUserName);
+	    textMessage.setCreateTime(new Date().getTime());
+	    textMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_KF);//需要将消息转发客服系统
+	    
 	    // 将文本消息对象转换成xml
 	    respXml = MessageUtil.messageToXml(textMessage);
 	} catch (Exception e) {

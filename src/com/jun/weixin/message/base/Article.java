@@ -1,4 +1,4 @@
-package com.jun.weixin.message.resp;
+package com.jun.weixin.message.base;
 
 public class Article {
     // 图文消息名称
